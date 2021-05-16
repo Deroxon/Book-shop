@@ -1,0 +1,16 @@
+.Navig {
+    
+    font-size:1em;
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    display:inline-block;
+    margin-left:30px;
+    color:white;
+    text-shadow:0.5px 0.5px 0.5px black;
+    text-align: center;
+}
+.Navig:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
