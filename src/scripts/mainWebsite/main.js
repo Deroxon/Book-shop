@@ -1,39 +1,66 @@
 import '../../styles/main/main.css'
 import React from 'react'
-import HotSellers from "./hotSeller"
-import $ from "jquery"
-
+import { FaShoppingCart, FaCashRegister, FaCommentDollar,  } from "react-icons/fa";
+import {IconContext } from "react-icons"
+import Ksiazka from './ksiazka';
 
 class Main extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            dane: [],
+            books: props.books,
+            newList: [],
+            parentHot: false,
+            
             
         }
 
     }
 
-    componentDidMount() {
-        fetch('https://swapi.dev/api/people/')
-        .then(response => response.json())
-        .then(data => {
-            this.setState({dane: data.results})
-        })
-        .catch(err => console.log("error", err))
 
+
+       
+    showHotSellers() {
+
+        let nowaMap = this.state.books.slice(0, 6);
         
-
-
+        // w tej zmiennej również dopsiujemy wartość i przekazujemy props który ustawia state aby mozna było widzieć jakie właściwości mamy
+        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.props.AddToCart(id)  } />)
+        
+        console.log(this.state.parentHot)
+        this.setState( prevState => {
+            return {
+                parentHot: !prevState.parentHot,
+                newList: nowaMap,
+            }
+        } )
+        
     }
+    
+
+    
 
     
     
     render() {
-       
+
         
-        // zmapowana lista i w tym pliku jest ten komponent
-        let mappedList = this.state.dane.map(item => <HotSellers key={item.height} item={item} />)
+        console.log('dane')
+       console.log(this.state.newList)
+       console.log('books')
+       console.log(this.state.books)
+        
+       const isLoaded = this.state.parentHot;
+       let button;
+       let text;
+       if(isLoaded) {
+           button = "Hide HotSellers"
+           text= this.state.newList;
+       } else {
+           button = "Show HotSellers"
+           text= ''
+       }
+        
         
 
         return (
@@ -42,13 +69,30 @@ class Main extends React.Component {
                 <div className="mainPicture1"></div>
                 <div className = "container"> 
     
-                    <div className="rowIcons">
-                        <div className="Icon"><img src="../../images/book.png" /><span>Look our full offer</span> </div>
-                        <div className="Icon"><img src="../../images/book.png" /><span>Look our full offer</span> </div>
-                        <div className="Icon">ikona</div>
-                        <div className="Icon">ikona</div>
-                    </div>
-    
+                    
+
+                    <h1 className="h1main">What we offer:</h1>
+
+
+                        <IconContext.Provider value={{color: "rgb(115, 184, 207)", size: "70px"}} >
+                            <div className='icons'>
+                                <ul>
+                                    <li>
+                                        <FaShoppingCart />
+                                        <p>Methods of Payments</p>
+                                    </li>
+                                    <li>
+                                        <FaCashRegister/>
+                                        <p>Simple Cash bonus</p>
+                                    </li>
+                                    <li>
+                                        <FaCommentDollar/>
+                                        <p>Promotion Prices</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </IconContext.Provider >
+
                     <h1>Welcome to the Frogipt!</h1>
     
                     <div> 
@@ -67,8 +111,12 @@ class Main extends React.Component {
 
                         <p className='shh'>Sorry for same price and pictures but my API didnt have parametr like that</p>
             
+
+                        <button className="showHot" onClick={ () => this.showHotSellers()}><h2>{button}</h2></button>
+
+
                         <div className='parentHot'> 
-                            {mappedList}
+                            { text}
                         </div>
                         
                     

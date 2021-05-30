@@ -5,6 +5,7 @@ import ulList from './scripts/fakeDataBase/ul'
 import Main from './scripts/mainWebsite/main'
 import Books from './scripts/mainWebsite/books'
 import Games from "./scripts/mainWebsite/games"
+import Load from "./scripts/mainWebsite/Loading"
 import $ from 'jquery'
 import Cart from "./scripts/mainWebsite/cart"
 import SummaryCart from "./scripts/mainWebsite/summaryCart"
@@ -16,8 +17,8 @@ class App extends React.Component {
     this.state = {
       strona: '',
       listaUl: ulList,
-      wygenerowania: <Main />,
       books: [],
+      wygenerowania: <Load change={this.sprawdzStrone } />,
       games: [],
       cart: [],
       sum: 0,
@@ -59,6 +60,11 @@ class App extends React.Component {
       })
     })
 
+    /// loading website and animation before
+
+      setTimeout( () => { this.setState({wygenerowania: <Main  books={this.state.books} AddToCart={this.AddToCart} cart={this.state.cart}/>}) }, 1500   )
+
+    
   }
 
   communicates(com, boolean) {
@@ -125,9 +131,9 @@ class App extends React.Component {
   
 
   pokazStrone(id) {
-    
+    console.log('using')
     if(id === 0) {
-      this.setState({wygenerowania: <Main />})
+      this.setState({wygenerowania: <Main books={this.state.books} AddToCart={this.AddToCart} cart={this.state.cart} />})
     } 
     else if (id === 1) {
       this.setState({wygenerowania: <Books books={this.state.books} cart={this.state.cart} AddToCart={this.AddToCart} />})
@@ -136,7 +142,7 @@ class App extends React.Component {
       this.setState({wygenerowania: <Games games={this.state.games} cart={this.state.cart} AddToCart={this.AddToCart} />})
     }
     else if(id === 3) {
-      this.setState({wygenerowania: <Main />})
+      this.setState({wygenerowania: <Load change={this.sprawdzStrone }/>})
     }
     
   }
@@ -277,6 +283,8 @@ deleteFromCart(id) {
 
   }
 
+
+ 
 
 
   
