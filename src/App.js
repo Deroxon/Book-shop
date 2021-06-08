@@ -81,7 +81,7 @@ class App extends React.Component {
     grabPopUp.innerHTML = com;
     
 
-    setTimeout(function t() { let grabPopUp = document.querySelector(".popUp"); grabPopUp.style.top = "-10%"; },1500)
+    setTimeout(function t() { let grabPopUp = document.querySelector(".popUp"); grabPopUp.style.top = "-10%"; },1300)
     
   }
 
@@ -262,7 +262,7 @@ deleteFromCart(id) {
       } 
       // w przeciwnym wypadku dostajesz alert
       else {
-          return alert('You cant add Same product!')
+        this.communicates( "Product is already in the cart!" , false)
       }
       
   })
@@ -276,7 +276,8 @@ deleteFromCart(id) {
           cart: [],
           form: !prevState.form, 
           summary: !prevState.summary, 
-          sum: 0
+          sum: 0,
+          SumOfCartProducts: 0,
         }
     })
     this.communicates("Your order has been send, check e-mail" ,true)
@@ -342,7 +343,7 @@ render() {
 
                           {mapujCart}
 
-                          <button className='check' onClick={this.podliczKoszyk} >Check</button>
+                          <button style={{display: this.state.SumOfCartProducts === 0 ? "none" : "block"}} className='check' onClick={this.podliczKoszyk} >Check</button>
 
                           <div style={{display: this.state.sum !== 0 ? 'block' : 'none'}} className='forAll'>Price for cart: {this.state.sum}$</div>
                           

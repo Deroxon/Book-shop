@@ -1,8 +1,9 @@
 import '../../styles/main/main.css'
-import React from 'react'
+import React, {useState} from 'react'
 import { FaShoppingCart, FaCashRegister, FaCommentDollar,  } from "react-icons/fa";
 import {IconContext } from "react-icons"
 import Ksiazka from './ksiazka';
+
 
 class Main extends React.Component {
     constructor(props) {
@@ -44,12 +45,6 @@ class Main extends React.Component {
     
     render() {
 
-        
-        console.log('dane')
-       console.log(this.state.newList)
-       console.log('books')
-       console.log(this.state.books)
-        
        const isLoaded = this.state.parentHot;
        let button;
        let text;
@@ -61,12 +56,15 @@ class Main extends React.Component {
            text= ''
        }
         
+    
         
 
         return (
             <div className="mainContainer">
                 
-                <div className="mainPicture1"></div>
+                <div className="mainPicture1">
+                    
+                </div>
                 <div className = "container"> 
     
                     
@@ -109,7 +107,7 @@ class Main extends React.Component {
 
                         <h1>Hot Fetched Names:</h1>
 
-                        <p className='shh'>Sorry for same price and pictures but my API didnt have parametr like that</p>
+                        
             
 
                         <button className="showHot" onClick={ () => this.showHotSellers()}><h2>{button}</h2></button>
