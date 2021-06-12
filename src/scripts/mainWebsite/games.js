@@ -1,6 +1,6 @@
 import React from "react"
 import '../../styles/main/book.css'
-import Game from "../mainWebsite/games/game"
+import Game from "./games/game"
 
 
 

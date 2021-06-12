@@ -10,6 +10,7 @@ import $ from 'jquery'
 import Cart from "./scripts/mainWebsite/cart"
 import SummaryCart from "./scripts/mainWebsite/summaryCart"
 import CartForm from "./scripts/mainWebsite/cartForm"
+import Support from './scripts/mainWebsite/support';
 
 class App extends React.Component {
   constructor() {
@@ -142,7 +143,7 @@ class App extends React.Component {
       this.setState({wygenerowania: <Games games={this.state.games} cart={this.state.cart} AddToCart={this.AddToCart} />})
     }
     else if(id === 3) {
-      this.setState({wygenerowania: <Load change={this.sprawdzStrone }/>})
+      this.setState({wygenerowania: <Support change={this.sprawdzStrone }/>})
     }
     
   }
@@ -262,7 +263,7 @@ deleteFromCart(id) {
       } 
       // w przeciwnym wypadku dostajesz alert
       else {
-        this.communicates( "Product is already in the cart!" , false)
+        this.communicates( "Product is already in the cart!" ,false)
       }
       
   })
