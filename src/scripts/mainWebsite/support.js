@@ -10,7 +10,7 @@ class Support extends React.Component {
         this.state= {
             sentences: [],
             truth: false,
-           
+         
 
         }
         this.togglerSupport = this.togglerSupport.bind(this)
