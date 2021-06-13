@@ -1,6 +1,6 @@
 import React from "react"
 import "../../../styles/main/support.css"
-
+import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 class SupportQA extends React.Component {
 
     constructor(props) {
@@ -21,18 +21,18 @@ class SupportQA extends React.Component {
         
 
         if(this.props.item.Truth) {
-            textButton = "Hide Answer";
-        } else { textButton = "Show Answer"}
+            textButton = <AiOutlineArrowUp />
+        } else { textButton = <AiOutlineArrowDown/>}
         console.log("update")
 
         return ( 
-            <div className="questionContainer" >
-                <tr id={this.props.item.id}>
-                    <td>
+           
+                <tr >
+                    <td id={this.props.item.id} onClick={() => this.props.togglerSupport(this.props.item.id)}>
                 
                         <div className="quest" >
                             <p className="question">{this.props.item.Question}</p>
-                                <button className="togglerQA" onClick={() => this.props.togglerSupport(this.props.item.id)}> {textButton} </button>
+                                <div className="togglerQA" > {textButton} </div>
             
                             <p className="answer"  style={{display: this.props.item.Truth ? "block" : "none"}}>{this.props.item.Answer}</p>
                         </div>
@@ -41,7 +41,7 @@ class SupportQA extends React.Component {
                 </tr>
                 
     
-            </div>
+           
         )
     }
     
