@@ -6,12 +6,11 @@ class SupportQA extends React.Component {
     constructor(props) {
         super(props)
         this.state ={
-            showedAnswer: false
+           
         }
     }
 
    
-    
 
 
 
@@ -23,12 +22,12 @@ class SupportQA extends React.Component {
         if(this.props.item.Truth) {
             textButton = <AiOutlineArrowUp />
         } else { textButton = <AiOutlineArrowDown/>}
-        console.log("update")
-
+        
+        
         return ( 
            
                 <tr >
-                    <td id={this.props.item.id} onClick={() => this.props.togglerSupport(this.props.item.id)}>
+                    <td id={this.props.item.id} onClick={() => this.props.toggler(this.props.item.id)}>
                 
                         <div className="quest" >
                             <p className="question">{this.props.item.Question}</p>

@@ -11,14 +11,14 @@ class Support extends React.Component {
         super()
         this.state= {
             sentences: [],
-            truth: false,
             qload: 5,
             qstart:0,
-            actualSentences: []
+            actualSentences: [],
+
          
 
         }
-        this.togglerSupport = this.togglerSupport.bind(this)
+        this.toggler = this.toggler.bind(this)
     }
 
     componentDidMount() {
@@ -34,72 +34,51 @@ class Support extends React.Component {
         })
     }
 
-    togglerSupport(id) {
-
+    toggler(id) {
         this.setState(prevState => {
-            const updatedSentence = prevState.sentences.map(nowy => {
-                if(nowy.id === id) {
-                    // ODWROTNA ZALEŻNOŚĆ
-                   
+            const updatedList = prevState.sentences.map(item => {
+                if(item.id === id) {
                     return {
-                        ...nowy,
-                        Truth: !nowy.Truth
+                        ...item,
+                        Truth: !item.Truth
                     }
                 }
-                console.log( "ELO" ,nowy.Truth)
-                
-
-                
-
-                return nowy
+                return item
             })
             return {
-                sentences: updatedSentence
+                sentences: updatedList
             }
         })
-
-        
-
     }
 
-    showMoreQuestions() {
+    showMore() {
 
-        this.setState(prevState => {
-
-            let mappedListofQuestions =[];
-            if(this.state.qload === (this.state.sentences.length + 5) ) {
-                mappedListofQuestions = this.state.sentences.slice(this.state.qstart, 5);
-            }else {
-                mappedListofQuestions = this.state.sentences.slice(this.state.qstart, this.state.qload);
-            }
-        
-            mappedListofQuestions = mappedListofQuestions.map(item =>  <SupportQA  item={item} key ={item.id} togglerSupport = {this.togglerSupport} />   );
-
-            // if i have enough 
-            if(this.state.qload === (this.state.sentences.length + 5)) {
+        if(this.state.qload === 15) {
+            this.setState( {  
+                    qload: 5
+            })
+        }
+        else {
+            this.setState( prevState => {
                 return {
-                    actualSentences: mappedListofQuestions,
-                    qload: 5,
+                    qload: prevState.qload + 5
                 }
-            }
-            else {
-                return {
-                    actualSentences: mappedListofQuestions,
-                    qload: prevState.qload+5,
-                }
-            }
-            
-        } )
-
-
+            })
+        }
+       
 
     }
+    
 
-
+       
+    
 
     render() {
         let QcategoriesForma = [];
-        const support =  this.state.sentences.map(item =>  <SupportQA  item={item} key ={item.id} togglerSupport = {this.togglerSupport} />   );
+
+        // mapped list
+        let updatedList = this.state.sentences.slice(this.state.qstart, this.state.qload);
+        updatedList = updatedList.map(item => <SupportQA item={item} key={item.id} toggler={this.toggler } /> )
 
         const Qtitles = [
         {topic: "My account", ul: ['Change data', 'Forgotten password', 'Communication preferences'], icon: <MdAccessibility /> },
@@ -107,15 +86,13 @@ class Support extends React.Component {
         {topic: "Payment", ul: ['Payment options', 'When do I get charged', 'Payment declined'], icon: <MdPayment/> },
         {topic: "Stores & Service", ul: ['Collect from my store', 'Contact my store', 'Stores during lockdown?'], icon: <MdShop/> },
         ];
-        // ZRÓB TO API ODNOŚNIE 4 SYMBOLI LUB WYKMIN JAK ZROBIĆ TO BEZ API 
-
+    
         
         QcategoriesForma = Qtitles.map(item => <QcategoriesForm  item={item} key={item.topic}/>)
 
-        let text = '';
-        if(this.state.qload === 5) {
-            text = "Show Questions"
-        } else if (this.state.qload === (this.state.sentences.length + 5)) {text="hide most Questions"} else { text="Show more Questions"}
+       let text = '';
+       if(this.state.qload === 15) { text='Show Less'}
+       else{text='Show More'}
 
         return (
             <div className="konter">
@@ -124,10 +101,11 @@ class Support extends React.Component {
 
                 <section className="Qquestions">
                     <table>
-                        {this.state.actualSentences}
+                        {updatedList}
                     </table>
-                    <button onClick={() => this.showMoreQuestions()}>{text}</button>
                 </section>
+                <button onClick={() => this.showMore()}>{text}</button>
+                
 
                 <section className="Contact">
                     <ContactOurTeam />
