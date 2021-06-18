@@ -3,7 +3,7 @@ import "../../../styles/main/support.css"
 import {IconContext } from "react-icons"
 function QcategoriesForm(props) {
 
-    console.log("PROPS ", props)
+    
     return (
         <div className="Qcategory">
             <header>   
