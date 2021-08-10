@@ -4,7 +4,7 @@ import Game from "./games/game"
 
 
 
-class Books extends React.Component {
+class Games extends React.Component {
 
     /* kontynnuacja zrób tak aby w tej klasie zostało zmapowane cart i przekazane do funkcji która nam wygeneuje koszyk i ta funkcja zostanie zaimportowana do top.js aby można jej swobodnie używać na każdej podstronie, oczywiście po użyciu addToCard */
     constructor(props) {
@@ -177,4 +177,4 @@ class Books extends React.Component {
 
 
 
-export default Books
+export default Games

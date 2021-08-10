@@ -26,8 +26,8 @@ class CartForm extends React.Component {
 
 
     render() {
-
-        let mapped = this.state.countries.map(item => <Countries item={item} key ={item.id} />)
+        console.log(this.state.countries)
+        let mapped = this.state.countries.map(item => <Countries item={item} key ={item.altSpellings} />)
 
 
         return (

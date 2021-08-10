@@ -7,13 +7,13 @@ function Game(props) {
          <div className='childBook'> 
  
      
-             <div className='childIMG' style={{backgroundImage:  `url(${props.item.url})` }}></div>
+             <div className='childIMG' style={{backgroundImage:  `url(${props.item.avatar})` }}></div>
              <ul>
-                 <li><b>Book:</b> {props.item.name}</li><br/>
-                 <li><b>Author:</b> {props.item.artist}</li><br/>
+                 <li><b>e-Book:</b> {props.item.name}</li><br/>
+                 <li><b>Publishing house:</b> {props.item.company}</li><br/>
                  <li><b>Price:</b> {props.item.price}$</li><br/>
              </ul>
-             <button onClick={() => props.funkcja(101)}>Add to Cart</button> 
+             <button onClick={() => props.funkcja(props.item.id)}>Add to Cart</button> 
              
              
             

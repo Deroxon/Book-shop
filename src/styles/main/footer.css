@@ -5,6 +5,7 @@
     margin-top:100px;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .footerContact {
     display: inline-block;
@@ -118,13 +119,41 @@
     margin-bottom: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     
     .paymentDiv {
         height: 30px;
     }
     .contactAdress {
         font-size:15px;
+    }
+    .footerLi {
+        width:100%;
+        background:rgb(255, 255, 255);
+        display: inline-block;
+        
+
+    }
+    .footerUl {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .footerUl li {
+        width:100%;
+    }
+    .footerContact {
+        margin-top: 50px;
+    }
+    
+  }
+
+
+  @media screen and (min-width: 1400px) {
+    
+    .footerUl {
+        margin: 30px 100px;
     }
     
   }

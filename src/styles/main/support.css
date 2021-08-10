@@ -2,57 +2,274 @@ body {
     margin: 0;
     padding: 0;
 }
-h1 {
-    margin-top:50px;
-    
-}
-.questionContainer {
-    margin: 30px auto;
-    width:80%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    border: 1px solid rgb(131, 120, 120);
-    border-radius: 5px;
-    box-shadow: 0.5px  0.5px 0.5px  0.5px rgb(131, 120, 120);
-    
-}
+
 .konter {
     width:100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
-table {
-    width:80%;
-    margin-top:100px;
+.konter button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left:0%;
+  right: 0%;
+  margin:0 auto;
+  margin-top:30px;
+  width:30%;
+  height:50px;
+  cursor: pointer;
+  border-radius: 3px;
 }
-table tr {
-    display: flex;
-    width:100%;
-    background: rgb(238, 234, 234);
+.konter button:hover {
+  background: radial-gradient(rgb(236, 229, 229),rgb(195, 190, 190));
 }
-table td {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.Qquestions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width:97%;
+  font-size:18px;
 }
 
-.question {
-    font-weight: 600;
-}
-button {
-    cursor: pointer;
+h1 {
+    margin-top:50px;
     
 }
 
+table td {
+    margin: 30px auto;
+    width:80%;
+    background:white;
+    color:rgb(59, 57, 57);
+   
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.5px solid rgba(131, 120, 120, 0.5);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.question {
+    font-weight: 600;
+}
+
+.togglerQA {
+    color:rgb(59, 57, 57);
+    font-size:25px;
+}
+
+.konter {
+    display: inline-block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+.howCan {
+  width:90%;
+  background: url("https://thumbs.dreamstime.com/b/business-man-pointing-something-25226698.jpg");
+  background-size: 100% 100%;
+  justify-content: center;
+  align-items: center;
+  left:5%;
+  position: relative;
+
+  display: flex;
+  min-height:400px;
+  margin-top:63px;
+ 
+}
+
+.howCan h1 {
+  color:rgba(0, 0, 0, 0.6);
+  font-family: 'Quicksand', sans-serif;
+  font-size:40px;
+ 
+  margin-left:40%;
+  margin-bottom:20%;
+
+}
+
+.QA {
+  display: table;
+  margin: 0 auto;
+  right:0%;
+    position: relative;
+  color:rgb(75, 68, 68);
+    text-shadow: 0px 3px 0px #b2a98f,
+                 0px 14px 10px rgba(0,0,0,0.15),
+                 0px 24px 2px rgba(0,0,0,0.1),
+                 0px 34px 30px rgba(0,0,0,0.1);
+  font-size: 40px;
+  margin-top:100px;
+  margin-bottom: 20px;
+}
+
+/* QcategoriesForm */
+
+  .Qcategories {
+      
+      width: 90vw;
+      min-height:470px;
+     
+      display: table;
+      margin: 0 auto;
+      text-align:center
+  }
+
+  .Qcategory {
+      width:40%;
+      min-width: 300px;
+      height:160px;
+     background-color: rgb(255, 255, 255);
+      margin:30px;
+    
+      display:inline-block;
+      
+  }
+  .topic {
+    text-align: center;
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+    color:white;
+    text-shadow:1px 0.5px 1px black;
+    font-size: 35px;
+    padding:2px;
+    cursor:pointer;
+    text-align: center;
+  }
+
+  .Qcategory ul {
+    text-align: left;
+
+  }
+  .Qcategory ul li {
+      cursor: pointer;
+      margin-top:3px;
+  }
+  .Qcategory ul li:hover {
+    text-decoration: underline;
+  }
+  .icon-Qcat {
+    margin-right:20px;
+    padding-top:5px;
+    
+  }
+  
 
 
+  /* Contact */
+
+  .Contact {
+      width:90%;
+      font-size:20px;
+      margin: 50px auto 50px auto;
+      background:white;
+      font-family: 'Times New Roman', Times, serif;
+  }
+ 
+  .Contact h2 {
+      text-align:center;
+  }
+  .Contact .dateOpen {
+    background: linear-gradient(to right, #56CCF2, #2F80ED);
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:10px 10px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+  }
+  .Contact .dateOpen li {
+      margin-top:5px;
+      list-style-type: none;
+      text-align: left;
+      text-align:center;
+  }
+  .Contact .ulContact {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 0px;
+  }
+  .Contact .ulContact li {
+    list-style-type: none;
+    width:100%;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding-left:15px;
+    border-bottom: 1px solid rgb(226, 221, 221);
+  }
+  .Contact .ulContact li:hover {
+        background-color: rgb(219, 216, 216);
+  }
+  
+
+  .Contact .iconsUlContact  {
+    color: #2F80ED;
+    margin-right:5px;
+  }
+
+  .Contact .ulContact li p  {
+    font-size:12px;
+    color:rgb(148, 146, 146);
+  }
+
+
+/* dostosowanie do wersji desktopowych */
 @media screen and (min-width: 992px) {
     table {
-        width:60%;
-        margin-top:100px;
+        width:50%;
+        margin-top:20px;
+    }
+    .Qquestions {
+        position: relative;
+        display: flex;
+        right:10%;
+        justify-content: center;
+    }
+    .Contact {
+        width:20%;
+        font-size:15px;
+        background:white;
+        font-family: 'Times New Roman', Times, serif;
+        position: absolute;
+        right:5%;
+        top:630px;
+        margin: 0;
+        border-radius:10px;
+        
+    }
+    .Contact .ulContact li {
+        list-style-type: none;
+        display: inline-block;
+        cursor: pointer;
+        padding-left:15px;
+        border-bottom: 1px solid rgb(226, 221, 221);
+      }
+      .konter button {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left:-10%;
+        
+       
+      }
+    .Qcategories {
+    
+    margin-top:100px;
+    }
+    .QA {
+      right:10%;
+    }
+
+
+  }
+
+  @media screen and (min-width: 1400px) {
+    .Qcategory {
+        width: 30%;
     }
   }

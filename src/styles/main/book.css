@@ -4,8 +4,6 @@
     width:80%;
     margin-left:auto;
     margin-right: auto;
-    background-color: white;
-    box-shadow: 1px 1px 1px rgb(182, 177, 177);
     border-radius:5px;
     position: relative;
     margin-top:100px;
@@ -35,7 +33,7 @@
     display: inline-block;
     text-align: center;
     border:thin rgb(194, 191, 191) solid;
-    background-color: rgb(253, 253, 241);
+    ;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin:25px;
@@ -81,7 +79,7 @@
     outline: 0;
     padding: 12px;
     color: white;
-    background-color: #000;
+    background-color: rgb(58, 55, 55);
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -91,7 +89,7 @@
     border-bottom-right-radius: 5px;
 }
 .childBook button:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 hr {
     width:80%;

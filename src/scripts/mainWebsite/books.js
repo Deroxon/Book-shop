@@ -17,7 +17,8 @@ class Books extends React.Component {
             cart: props.cart,
            books: props.books,
            nowyMap: -1,
-           AddToCart: props.AddToCart
+           AddToCart: props.AddToCart,
+           showProduct: props.showProduct
 
         }
 
@@ -31,7 +32,7 @@ class Books extends React.Component {
                 // w zmiennej ucinamy to co nas interesuje
         let nowaMap = this.state.books.slice(this.state.actualIndex, this.state.stalaWartoscPrzewijania);
         // w tej zmiennej również dopsiujemy wartość i przekazujemy props który ustawia state aby mozna było widzieć jakie właściwości mamy
-        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.state.AddToCart(id)  } />)
+        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.state.AddToCart(id) } showProduct={ id => this.state.showProduct(id)} />)
 
             return {
             nowyMap: nowaMap
@@ -50,8 +51,8 @@ class Books extends React.Component {
 
 
     przewijaniePrzod() {
-    
-        
+
+       
         this.setState(prevState => {
             return {
                 actualPage: prevState.actualPage+1,
@@ -81,7 +82,7 @@ class Books extends React.Component {
         let nowaMap = this.state.books.slice(this.state.actualIndex, this.state.stalaWartoscPrzewijania);
         
         // w tej zmiennej również dopsiujemy wartość i przekazujemy props który ustawia state aby mozna było widzieć jakie właściwości mamy
-        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.state.AddToCart(id)  } />)
+        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.state.AddToCart(id) } showProduct ={ id => this.state.showProduct(id)} books={this.state.books}   />)
 
             return {
             nowyMap: nowaMap
@@ -114,6 +115,7 @@ class Books extends React.Component {
          // checking if user isnt going on pages that doesnt exist for next
          // there is bug, about its backing 2 sites back, need to fix
          if(this.state.stalaWartoscPrzewijania > this.props.books.length +10 && this.props.books.length) {
+             
             console.error("dont go there")
             this.setState(prevState => {
                 return {

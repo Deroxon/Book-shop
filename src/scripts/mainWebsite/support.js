@@ -4,6 +4,7 @@ import SupportQA from "../mainWebsite/supports/supportQA"
 import QcategoriesForm from "../mainWebsite/supports/QcategoriesForm"
 import ContactOurTeam from "../mainWebsite/supports/ContactOurTeam"
 
+
 import { MdAccessibility, MdShoppingCart, MdPayment, MdShop } from "react-icons/md";
 class Support extends React.Component {
 
@@ -96,10 +97,16 @@ class Support extends React.Component {
 
         return (
             <div className="konter">
+
+                <section className="howCan">
+                    
+                    <h1>We are here to help you!</h1>
+                </section>
                 
-                
+                <h1 className="QA">Question and Answers:</h1>
 
                 <section className="Qquestions">
+                    
                     <table>
                         {updatedList}
                     </table>

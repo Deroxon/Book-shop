@@ -9,6 +9,10 @@
     margin-top: 40px;
     
 }
+.showHot {
+    margin-bottom:50px;
+    margin-top:30px;
+}
 .mainPicture1 {
     background-image: url('../../images/ksieg0.jpg');
     background-size: 100% 100%;

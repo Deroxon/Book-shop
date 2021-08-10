@@ -26,7 +26,7 @@ class Main extends React.Component {
         let nowaMap = this.state.books.slice(0, 6);
         
         // w tej zmiennej również dopsiujemy wartość i przekazujemy props który ustawia state aby mozna było widzieć jakie właściwości mamy
-        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.props.AddToCart(id)  } />)
+        nowaMap = nowaMap.map(item => <Ksiazka key={item.id} item={item} funkcja={ id => this.props.AddToCart(id)  } showProduct={this.props.showProduct} books={this.state.books}  />)
         
         console.log(this.state.parentHot)
         this.setState( prevState => {
