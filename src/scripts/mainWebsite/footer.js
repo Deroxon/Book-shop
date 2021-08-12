@@ -27,7 +27,7 @@ class Footer extends React.Component {
         let mappedTransportList = this.state.transportL.map(item => <PaymentDiv item={item} />)
 
         return (
-            <div>
+            <footer>
                 <section className="footerLi">
                     
                         {mappedUlList}
@@ -71,7 +71,7 @@ class Footer extends React.Component {
                             </ul>
                         </div>
                 </section>
-            </div>
+            </footer>
         )
     }
     

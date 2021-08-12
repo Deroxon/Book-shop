@@ -17,7 +17,8 @@ class Games extends React.Component {
             cart: props.cart,
            games: props.games,
            nowyMap: -1,
-           AddToCart: props.AddToCart
+           AddToCart: props.AddToCart,
+           showProduct: props.showProduct
 
         }
 
@@ -31,7 +32,7 @@ class Games extends React.Component {
                 // w zmiennej ucinamy to co nas interesuje
         let nowaMap = this.state.games.slice(this.state.actualIndex, this.state.stalaWartoscPrzewijania);
         // w tej zmiennej również dopsiujemy wartość i przekazujemy props który ustawia state aby mozna było widzieć jakie właściwości mamy
-        nowaMap = nowaMap.map(item => <Game key={item.id} item={item} funkcja={ id => this.state.AddToCart(id)  } />)
+        nowaMap = nowaMap.map(item => <Game key={item.id} item={item} funkcja={ id => this.state.AddToCart(id)  } showProduct={ id => this.state.showProduct(id)} type="ebook" />)
 
             return {
             nowyMap: nowaMap

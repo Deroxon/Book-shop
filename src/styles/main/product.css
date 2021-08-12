@@ -213,7 +213,75 @@
     width:55%;
     text-align: left;
   }
+  .anotherProducts {
+      margin-top:70px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      grid-column-start: -1;
+      grid-column-end:3;
+  }
+  .anotherProducts div {
+      display:inline-block
+  }
 
+  .editedChildBook {
+      min-width:180px;
+      height:250px;
+      display: inline-block;
+        text-align: center;
+        border:thin rgb(194, 191, 191) solid;
+        ;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding:10px;
+        margin:5px;
+        word-wrap: break-word;
+        font-size:20px;
+        
+  }
+
+.editedChildBook ul {
+    padding:0px;
+    display: block;
+    margin-bottom:-5px;
+    margin-top:10px;
+
+}
+
+.editedChildBook li {
+    list-style-type: none;
+    margin-top:0;
+    margin-bottom: 0;
+    font-size:0.8em;
+    padding:0px;
+    margin:0px;
+    display: block;
+}
+
+.anotherProducts .clickAP {
+    cursor: pointer;
+}
+
+.clickL  {
+    font-size:40px;
+    font-weight: 800;
+    position: relative;
+    float: left;
+
+    left:5%;
+}
+.clickR {
+    font-size:40px;
+    font-weight: 800;
+    position: relative;
+    float: right;
+
+    right:5%;
+
+}
+  
+  
 
 
   @media screen and (max-width:600px) {
@@ -224,6 +292,8 @@
     }
     
   }
+ 
+
 
   @media screen and (min-width:1400px) {
     .selectedOption {

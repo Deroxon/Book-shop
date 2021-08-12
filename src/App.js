@@ -243,18 +243,28 @@ deleteFromCart(id) {
      
       
       let zmienna = "";
-      let obiekt = "";
+      let finalObject = "";
       if(id < 70) {
         console.log('to id jest mniejsze')
         zmienna = this.state.books
         // pamiętamy że aby indexować od dobrej dajemy -1 
-        obiekt = zmienna[id-1]
       } else {
         zmienna = this.state.games
         // pamiętamy że aby indexować od dobrej dajemy -100 ponieważ w grach obiekty mają id od 101
-        obiekt = zmienna[id-101]
+        console.log("OBIEKKKT")
       }
-            console.log(zmienna)
+        zmienna = zmienna.map( e => {
+          if(e.id === id) {
+            finalObject = e;
+          }
+          else {
+            return
+          }
+        })
+
+
+        console.log(finalObject)
+
       // wyszukiwanie czy dany index o parametrze id znajduję się w tabelce cart
       let pos = this.state.cart.map( e => {return e.id;} ).indexOf(id)
       
@@ -263,7 +273,7 @@ deleteFromCart(id) {
       if (pos < 0) {
           return {
               SumOfCartProducts: prevState.SumOfCartProducts + 1,
-              cart: [...prevState.cart, obiekt],
+              cart: [...prevState.cart, finalObject],
           }
       } 
       // w przeciwnym wypadku dostajesz alert
@@ -303,9 +313,15 @@ deleteFromCart(id) {
   // zrobić show products aby po kliknięciu sprawdzimy czy id które klikneliśmy jest w books or games i następnie jeśli jest to generujemy stronę gdzie przesyłamy odpowiednie dane tego id, a ta strona nam generuje nasz produkt ze szczegółami, ładnie umiejscowiony
   showProduct(id) {
 
+    // scroll top when choose product
+    $(document).ready( () => { 
+        $('html, body').animate({scrollTop: 0}, 300)
+    })
 
+    
 
       let zmienna = "";
+      let finalObject = "";
       if(id < 70) {
         console.log('to id jest mniejsze')
         zmienna = this.state.books
@@ -313,9 +329,18 @@ deleteFromCart(id) {
         zmienna = this.state.games
       }
 
+      zmienna = zmienna.map( e => {
+        if(e.id === id) {
+          finalObject = e;
+        }
+        else {
+          return
+        }
+      })
 
-    
-    this.setState({wygenerowania: <Product change={this.sprawdzStrone } book={this.state.books[id]} AddToCart={this.AddToCart}/>})
+      
+
+    this.setState({wygenerowania: <Product change={this.sprawdzStrone } book={finalObject} ebook={finalObject} showProduct={this.showProduct} AddToCart={this.AddToCart} books={this.state.books} ebooks={this.state.games}/>})
     
 
 
@@ -419,9 +444,9 @@ render() {
         <div className='goUp' ></div>
 
 
-        <footer>
+       
             <Footer />
-        </footer>
+        
 
        
 
