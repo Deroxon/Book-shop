@@ -4,7 +4,6 @@ body {
 }
 
 .konter {
-    width:100vw;
     display:grid;
     grid-template-columns: 35% 35% 20%;
 }
@@ -295,7 +294,7 @@ table td {
   }
 
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 995px) {
     .Contact {
       width:100%;
       grid-column-start:1;
