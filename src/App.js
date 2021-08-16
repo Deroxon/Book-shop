@@ -74,11 +74,11 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     // scroll bottom when clicked checked product and there is value more than 0
     if(this.state.sum !== 0 ) {
-      console.log("SSSSSSSSSSSSSSSSSSSSSSSSSCROL")
       let grabCart = document.querySelector(".cart");
       grabCart.scrollTop = grabCart.scrollHeight;
-    
-    
+    }
+    if (prevState.wygenerowania == <Product />) {
+      console.log("this was A PRODUCT")
     }
   }
 
@@ -146,7 +146,10 @@ class App extends React.Component {
   
 
   pokazStrone(id) {
+    let grabNavTop = document.querySelector(".top");
+    grabNavTop.style.marginTop = "0px";
 
+    let grabMainApp = document.querySelector(".mainApp")
       // scroll top when choose product
       $(document).ready( () => { 
         $('html, body').animate({scrollTop: 0}, 300)
@@ -154,15 +157,19 @@ class App extends React.Component {
 
     if(id === 0) {
       this.setState({wygenerowania: <Main books={this.state.books} AddToCart={this.AddToCart} cart={this.state.cart} showProduct={this.showProduct}  />})
+      grabMainApp.classList.remove("mainAppRepair")
     } 
     else if (id === 1) {
       this.setState({wygenerowania: <Books books={this.state.books} cart={this.state.cart} AddToCart={this.AddToCart} showProduct={this.showProduct} />})
+      grabMainApp.classList.add("mainAppRepair")
     }
     else if (id === 2) {
       this.setState({wygenerowania: <Games games={this.state.games} cart={this.state.cart} AddToCart={this.AddToCart} showProduct={this.showProduct}  />})
+      grabMainApp.classList.add("mainAppRepair")
     }
     else if(id === 3) {
       this.setState({wygenerowania: <Support change={this.sprawdzStrone }/>})
+      grabMainApp.classList.remove("mainAppRepair")
     }
     
   }

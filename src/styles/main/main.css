@@ -12,6 +12,7 @@
     grid-column-end: 4;
     grid-template-columns: 20% 20% 20% 20% 20%;
     
+    
 }
 .showHot {
     margin-bottom:50px;
@@ -22,6 +23,7 @@
 .mainContainer {
     display:grid;
     grid-template-columns: 33% 33% 33%;
+    grid-row-gap: 50px;
 }
 
 .mainPicture1 {

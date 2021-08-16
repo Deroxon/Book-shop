@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.62356852.chunk.css",
+    "main.js": "./static/js/main.b2c2d60e.chunk.js",
+    "main.js.map": "./static/js/main.b2c2d60e.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.b6ae4e2a.js",
+    "runtime-main.js.map": "./static/js/runtime-main.b6ae4e2a.js.map",
+    "static/js/2.f8a96503.chunk.js": "./static/js/2.f8a96503.chunk.js",
+    "static/js/2.f8a96503.chunk.js.map": "./static/js/2.f8a96503.chunk.js.map",
+    "static/js/3.e6601d80.chunk.js": "./static/js/3.e6601d80.chunk.js",
+    "static/js/3.e6601d80.chunk.js.map": "./static/js/3.e6601d80.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.62356852.chunk.css.map": "./static/css/main.62356852.chunk.css.map",
+    "static/js/2.f8a96503.chunk.js.LICENSE.txt": "./static/js/2.f8a96503.chunk.js.LICENSE.txt",
+    "static/media/top.css": "./static/media/koszyk.2d9f1d29.png",
+    "static/media/main.css": "./static/media/ksieg0.a44d75f5.jpg",
+    "static/media/book.css": "./static/media/previous.05f5d2be.png",
+    "static/media/App.css": "./static/media/strzalka.2b4c3db3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b6ae4e2a.js",
+    "static/js/2.f8a96503.chunk.js",
+    "static/css/main.62356852.chunk.css",
+    "static/js/main.b2c2d60e.chunk.js"
+  ]
+}

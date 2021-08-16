@@ -3,6 +3,7 @@ body {
     padding: 0;
 }
 
+
 .konter {
     display:grid;
     grid-template-columns: 40% 40% 20% ;
@@ -266,8 +267,6 @@ table td {
         align-items: center;
         position: relative;
         left:-10%;
-        
-       
       }
     .Qcategories {
     
@@ -284,10 +283,13 @@ table td {
     .Qcategory {
         width: 30%;
     }
+    .Contact {
+      top:700px;
+  }
     
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 500px) {
     .QA {
       text-align: center;
     }
@@ -303,7 +305,7 @@ table td {
     .qa_middle {
       grid-column-start:1;
       grid-column-end:4;
-      margin-left:15px;
+      margin-left:5px;
 
     }
   }

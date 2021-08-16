@@ -1,6 +1,7 @@
 .topSide {
     justify-content: center;
     display: flex;
+
 }
 .koszyk {
     position: fixed;

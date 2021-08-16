@@ -104,21 +104,27 @@ class Product extends React.Component {
 
         let option = ''
         let specValue = ''
-
+        let grabMainApp = document.querySelector(".mainApp")
+        let grabNavTop = document.querySelector(".top")
         switch (params) {
             case 'describe':
             option = this.props.book.lorem;
             specValue = document.querySelector(".specDesc");
-            specValue.classList.add("selectedLi")
-            specValue.classList.remove("unSelectedLi")
+            specValue.classList.add("selectedLi");
+            specValue.classList.remove("unSelectedLi");
+            grabMainApp.classList.add("mainAppRepair");
+            grabNavTop.style.marginTop = "0px";
+           
             break;
 
             case 'species':
             
             specValue = document.querySelector(".specSpec");
-            specValue.classList.add("selectedLi")
-            specValue.classList.remove("unSelectedLi")
-
+            specValue.classList.add("selectedLi");
+            specValue.classList.remove("unSelectedLi");
+            grabMainApp.classList.remove("mainAppRepair");
+            grabNavTop.style.marginTop = "-50px";
+           
              option =   
              
              <div>
@@ -136,8 +142,10 @@ class Product extends React.Component {
 
             case 'delivery': 
             specValue = document.querySelector(".specDeli");
-            specValue.classList.add("selectedLi")
-            specValue.classList.remove("unSelectedLi")
+            specValue.classList.add("selectedLi");
+            specValue.classList.remove("unSelectedLi");
+            grabMainApp.classList.remove("mainAppRepair");
+            grabNavTop.style.marginTop = "-50px";
 
 
             option = <table className="delPayTable">

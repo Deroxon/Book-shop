@@ -325,5 +325,8 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .editedChildBook {
+        min-width:300px;
+    }
     
   }
