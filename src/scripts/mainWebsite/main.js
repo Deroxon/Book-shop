@@ -93,7 +93,7 @@ class Main extends React.Component {
 
                     <h1>Welcome to the Frogipt!</h1>
     
-                    <div> 
+                    <div className="aboutUs"> 
                         <h2>About us: </h2>
                         <p> Consectetur est ea tempor velit dolore tempor culpa eu excepteur sint. Enim irure tempor mollit proident proident ea et adipisicing eu sit velit. Magna et aliquip ullamco non minim proident.
     
@@ -114,7 +114,7 @@ class Main extends React.Component {
 
 
                         <div className='parentHot'> 
-                            { text}
+                            {text}
                         </div>
                         
                     

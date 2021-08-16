@@ -146,7 +146,12 @@ class App extends React.Component {
   
 
   pokazStrone(id) {
-    console.log('using')
+
+      // scroll top when choose product
+      $(document).ready( () => { 
+        $('html, body').animate({scrollTop: 0}, 300)
+    })
+
     if(id === 0) {
       this.setState({wygenerowania: <Main books={this.state.books} AddToCart={this.AddToCart} cart={this.state.cart} showProduct={this.showProduct}  />})
     } 

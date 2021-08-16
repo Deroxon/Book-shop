@@ -39,7 +39,7 @@ function Top(props) {
                 <div className="sumKoszyka"></div>
             </div>
 
-             <ul> 
+             <ul className="navigUL"> 
                  {mapujListe}
              </ul>
 

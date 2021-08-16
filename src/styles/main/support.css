@@ -5,7 +5,7 @@ body {
 
 .konter {
     display:grid;
-    grid-template-columns: 35% 35% 20%;
+    grid-template-columns: 40% 40% 20% ;
 }
 .mainContent {
   display: block;
@@ -45,7 +45,7 @@ h1 {
 
 table td {
     margin: 30px auto;
-    width:80%;
+    width:100%;
     background:white;
     color:rgb(59, 57, 57);
    
@@ -82,7 +82,7 @@ table td {
   min-height:400px;
   margin-top:63px;
   grid-column-start:1;
-  grid-column-end:5;
+  grid-column-end:4;
  
 }
 
@@ -113,7 +113,8 @@ table td {
 .qa_middle {
   display: inline-block;
   grid-column-start:1;
-  grid-column-end:4
+  grid-column-end:4;
+
 }
 
 /* QcategoriesForm */
@@ -136,7 +137,6 @@ table td {
       height: auto;
      background-color: rgb(255, 255, 255);
       margin:30px;
-    
       display:inline-block;
       
   }
@@ -298,10 +298,12 @@ table td {
     .Contact {
       width:100%;
       grid-column-start:1;
-      grid-column-end:5;
+      grid-column-end:4;
     }
     .qa_middle {
       grid-column-start:1;
-      grid-column-end:5;
+      grid-column-end:4;
+      margin-left:15px;
+
     }
   }
