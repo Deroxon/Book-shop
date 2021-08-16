@@ -2,10 +2,11 @@
 
 .bookContainer {
     width:80%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
     margin-left:auto;
     margin-right: auto;
     border-radius:5px;
-    position: relative;
     margin-top:100px;
 }
 .h1book {
@@ -17,15 +18,18 @@
     margin-top: 50px;
     border-radius:10px;
     width:70%;
-    min-width:400px;
     text-align: center;
     margin-left:auto;
     margin-right: auto;
+    grid-column-start: 1;
+    grid-column-end:4;
     
     
 }
 .parentBook {
     text-align: center;
+    grid-column-start: 1;
+    grid-column-end:4;
     
 }
 
@@ -42,6 +46,7 @@
     height:300px;
     word-wrap: break-word;
     font-size:20px;
+
 }
 .childBook ul {
     
@@ -95,6 +100,9 @@ hr {
 
 .szybkiSrodek {
     text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-template-columns: 33% 33% 33%;
 }
 
 .previous {
@@ -107,6 +115,8 @@ hr {
     display:inline-block;
     cursor:pointer;
     margin-right:10%;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 .next {
     background-image: url('../../images/next.png');
@@ -119,6 +129,8 @@ hr {
     text-align: center;
     cursor:pointer;
     margin-left:10%;
+    grid-column-start: 3;
+    grid-column-end: 4;
 }
 
 .next:hover  {
@@ -135,6 +147,8 @@ hr {
     border-radius:7px;
     font-size:25px;
     font-style: arial;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 
@@ -157,25 +171,42 @@ hr {
     border-radius:5px;
     display: none;
   }
+  
+    
+  .cartContainer {
+    display:inline-flex;
+    width:100%;
+    border:1px solid black;
+    
+}
+ 
 
   
   .cart .cartProduct {
-      border:1px solid black;
+      
       padding:20px;
-      font-size:17px;
-      display: inline-flex;
+      font-size:24px;
+      display: inline-block;
+      width:100%;
   }
+  .cart .cartContainer {
+    border:1px solid black;
+  }
+
+
   .cartProduct div {
       margin:5px;
   }
+
   .cartIMG {
-      width:30%;
-      min-height:100px;
-      background-size: 100% 100%;
-      background-position: center;
-      font-size:20px;
-      
-  }
+    
+    min-width:300px;
+    height:50%;
+    margin-top:40px;
+    min-height:130px;
+    background-size: 100% 100%;
+    background-position: center; 
+}
   .cart .forAll {
       position: relative;
       margin-top: 15px;
@@ -203,6 +234,8 @@ hr {
       height:30px;
       border-radius: 50%;
       cursor: pointer;
+      margin-top:30px;
+
   }
   .cart .check {
       border-radius:5px;
@@ -247,6 +280,12 @@ hr {
   }
 
   /*Ilościówki */
+
+  .cartQuanity {
+        display: relative
+
+  }
+
   .cartQuanityDiv {
      display: inline-flex;
      margin:5px;
@@ -262,34 +301,55 @@ hr {
 .cartQuanityDiv :first-child:hover, .cartQuanityDiv :last-child:hover{
     color: rgb(207, 202, 202);
 }
+hr {
+    grid-column-start: 1;
+     grid-column-end: 4;
+}
 
 
-
-@media screen and (max-width: 602px) {
+@media screen and (max-width: 802px) {
     .cart {
       width:100%;
-      left:0
+      left:0;
+      
     }
     .cartQuanityDiv div {
         font-size: 15px;
     }
     .cart .cartProduct {
-        border:1px solid black;
         margin-top:0px;
         padding:15px;
         padding-left: 5px;
         padding-top: 30px;
-        font-size:14px;
-        display: inline-flex;
+        font-size:17px;
+        display: inline-block;
+        width:100%;
+    }
+    
+    
+    
+    .h1book {
+        font-size:0.9em;
+    }
+    .bookContainer {
+        min-width: 100%;
+        
+    }
+
+    
+    .childBook {
+        display: inline-block;
+        
+        border:thin rgb(194, 191, 191) solid;
+        ;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin:25px;
+        width: 20%;
+        min-width:250px;
+        height:300px;
+        
     }
     
   }
 
-  @media screen and (max-width: 802px) {
-    .cart {
-      width:100%;
-      left:0
-    }
-   
-    
-  }

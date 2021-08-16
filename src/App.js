@@ -71,6 +71,17 @@ class App extends React.Component {
     
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    // scroll bottom when clicked checked product and there is value more than 0
+    if(this.state.sum !== 0 ) {
+      console.log("SSSSSSSSSSSSSSSSSSSSSSSSSCROL")
+      let grabCart = document.querySelector(".cart");
+      grabCart.scrollTop = grabCart.scrollHeight;
+    
+    
+    }
+  }
+
   communicates(com, boolean) {
 
     let grabPopUp = document.querySelector(".popUp");
@@ -85,7 +96,7 @@ class App extends React.Component {
     grabPopUp.innerHTML = com;
     
 
-    setTimeout(function t() { let grabPopUp = document.querySelector(".popUp"); grabPopUp.style.top = "-10%"; },1300)
+    setTimeout(function t() { let grabPopUp = document.querySelector(".popUp"); grabPopUp.style.top = "-30%"; },1300)
     
   }
 
@@ -194,6 +205,10 @@ class App extends React.Component {
  }
 
 podliczKoszyk() {
+
+    
+  
+
     let cos= 0;
     this.setState( () => {
 
@@ -211,6 +226,7 @@ podliczKoszyk() {
         
     })
     cos= 0
+    
    
 }
 deleteFromCart(id) {  

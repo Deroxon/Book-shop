@@ -14,3 +14,10 @@
     cursor: pointer;
     opacity: 0.7;
 }
+
+@media screen and (max-width: 600px) {
+    .Navig {
+        font-size:0.9em;
+        margin-left:15px;
+    }
+}

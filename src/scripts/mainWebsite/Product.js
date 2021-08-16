@@ -413,17 +413,13 @@ class Product extends React.Component {
                     
                     <section className="anotherProducts">
 
+
+                     <div className="clickAP clickL" onClick={ () => this.przewijanieTyl() }>{"<"}</div>
                             
 
                                 {this.state.nowyMap}
 
-                            
-
-                            
-
-                            <div className="clickAP clickL" onClick={ () => this.przewijanieTyl() }>{"<"}</div>
-
-                            <div className="clickAP clickR" onClick={ () => this.przewijaniePrzod() }>{">"}</div>
+                      <div className="clickAP clickR" onClick={ () => this.przewijaniePrzod() }>{">"}</div>
 
                     </section>
                     

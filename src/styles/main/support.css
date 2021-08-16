@@ -5,9 +5,15 @@ body {
 
 .konter {
     width:100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display:grid;
+    grid-template-columns: 35% 35% 20%;
+}
+.mainContent {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+
 }
 .konter button {
   display: flex;
@@ -62,24 +68,22 @@ table td {
     font-size:25px;
 }
 
-.konter {
-    display: inline-block;
-}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 .howCan {
-  width:90%;
+  width:100%;
   background: url("https://thumbs.dreamstime.com/b/business-man-pointing-something-25226698.jpg");
   background-size: 100% 100%;
   justify-content: center;
   align-items: center;
-  left:5%;
   position: relative;
-
   display: flex;
   min-height:400px;
   margin-top:63px;
+  grid-column-start:1;
+  grid-column-end:5;
  
 }
 
@@ -107,6 +111,11 @@ table td {
   margin-top:100px;
   margin-bottom: 20px;
 }
+.qa_middle {
+  display: inline-block;
+  grid-column-start:1;
+  grid-column-end:4
+}
 
 /* QcategoriesForm */
 
@@ -114,16 +123,18 @@ table td {
       
       width: 90vw;
       min-height:470px;
-     
       display: table;
       margin: 0 auto;
-      text-align:center
+      text-align:center;
+      grid-column-start:1;
+      grid-column-end:5;
   }
 
   .Qcategory {
       width:40%;
       min-width: 300px;
-      height:160px;
+      min-height:160px;
+      height: auto;
      background-color: rgb(255, 255, 255);
       margin:30px;
     
@@ -168,6 +179,8 @@ table td {
       margin: 50px auto 50px auto;
       background:white;
       font-family: 'Times New Roman', Times, serif;
+      grid-column-start:3;
+      grid-column-end:4
   }
  
   .Contact h2 {
@@ -271,5 +284,25 @@ table td {
   @media screen and (min-width: 1400px) {
     .Qcategory {
         width: 30%;
+    }
+    
+  }
+
+  @media screen and (max-width: 400px) {
+    .QA {
+      text-align: center;
+    }
+  }
+
+
+  @media screen and (max-width: 900px) {
+    .Contact {
+      width:100%;
+      grid-column-start:1;
+      grid-column-end:5;
+    }
+    .qa_middle {
+      grid-column-start:1;
+      grid-column-end:5;
     }
   }

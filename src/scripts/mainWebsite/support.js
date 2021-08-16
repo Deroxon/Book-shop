@@ -103,16 +103,21 @@ class Support extends React.Component {
                     <h1>We are here to help you!</h1>
                 </section>
                 
-                <h1 className="QA">Question and Answers:</h1>
-
-                <section className="Qquestions">
-                    
-                    <table>
-                        {updatedList}
-                    </table>
-                </section>
-                <button onClick={() => this.showMore()}>{text}</button>
                 
+               
+
+            <div className="qa_middle">
+
+                <h1 className="QA">Question and Answers:</h1>
+                
+                    <section className="Qquestions">
+                        
+                        <table>
+                            {updatedList}
+                        </table>
+                    </section>
+                    <button onClick={() => this.showMore()}>{text}</button>
+            </div>
 
                 <section className="Contact">
                     <ContactOurTeam />

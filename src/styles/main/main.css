@@ -103,15 +103,14 @@
 
 .icons {
     position: relative;
-    display:flex;
+    display:inline-flex;
     align-items: center;
     justify-content: center;
     color: rgb(56, 56, 56);
     font-family: Arial, Helvetica, sans-serif;
+    margin-right:6%;
 }
-.icons ul {
-    display: inline-block;
-}
+
 
 .icons ul li {
     display: inline-block;
