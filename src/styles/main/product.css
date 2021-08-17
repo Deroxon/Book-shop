@@ -245,8 +245,8 @@
         margin:5px;
         word-wrap: break-word;
         font-size:20px;
-        
   }
+
 
 .editedChildBook ul {
     padding:0px;
@@ -301,6 +301,10 @@
   @media screen and (max-width:500px) {
     .GridLayout {
         min-width:500px;
+    }
+    .editedChildBook {
+        font-size: 17px;
+        min-width:170px;
     }
     
     

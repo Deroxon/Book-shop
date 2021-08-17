@@ -29,7 +29,8 @@ class App extends React.Component {
       activeCart: false,
       activeOrder: false,
       summary: false,
-      form: false
+      form: false,
+
     }
     this.sprawdzStrone = this.sprawdzStrone.bind(this)
     this.pokazStrone = this.pokazStrone.bind(this)
@@ -68,8 +69,10 @@ class App extends React.Component {
 
       setTimeout( () => { this.setState({wygenerowania: <Main  books={this.state.books} showProduct={this.showProduct} AddToCart={this.AddToCart} cart={this.state.cart} books={this.state.books} />}) }, 1500   )
 
+
     
   }
+
 
   componentDidUpdate(prevProps, prevState) {
     // scroll bottom when clicked checked product and there is value more than 0
@@ -100,6 +103,9 @@ class App extends React.Component {
     
   }
 
+  handleResize = (e) => {
+    this.setState({ windowWidth: window.innerWidth });
+   };
  
 
 
@@ -158,6 +164,7 @@ class App extends React.Component {
     if(id === 0) {
       this.setState({wygenerowania: <Main books={this.state.books} AddToCart={this.AddToCart} cart={this.state.cart} showProduct={this.showProduct}  />})
       grabMainApp.classList.remove("mainAppRepair")
+      
     } 
     else if (id === 1) {
       this.setState({wygenerowania: <Books books={this.state.books} cart={this.state.cart} AddToCart={this.AddToCart} showProduct={this.showProduct} />})
@@ -170,6 +177,10 @@ class App extends React.Component {
     else if(id === 3) {
       this.setState({wygenerowania: <Support change={this.sprawdzStrone }/>})
       grabMainApp.classList.remove("mainAppRepair")
+      // checking to repair website
+      if ($(window).width() < 500) {
+        grabMainApp.classList.add("mainAppRepair")
+      }
     }
     
   }
@@ -383,19 +394,28 @@ deleteFromCart(id) {
   
 render() {
 
-  
-  
+
+
+
+
 
   // przypisanie funkcji scrollowania w momencie załadowania dokumentu
 
+  let grabMainApp = document.querySelector(".mainApp")
+  console.log(grabMainApp)
+// checking to repair website
+
   $(document).ready( () => {
+      if ( ($(window).width() < 500) && grabMainApp) {
+        grabMainApp.classList.add("mainAppRepair")
+      }
+
     $('.goUp').click( () => {
       $('html, body').animate({scrollTop: 0}, 300)
   })
   })
 
-  console.log("cartttttttttttttttttttttt")
-  console.log(this.state.cart)
+
   let mapujSummary = this.state.cart.map(item => <SummaryCart key={item.id} item={item} />)
             
   let mapujCart = this.state.cart.map(item => <Cart key={item.id} item={item} obliczanie={this.updateQuanity} deleteOrder ={this.deleteFromCart} />)
