@@ -4,8 +4,6 @@ import React, {useState} from "react"
 
 function Cart(props) {
 
-    console.log("propsy cart")
-   console.log(props)
 
     let b = "CP"+props.item.id;
 

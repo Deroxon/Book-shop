@@ -4,8 +4,8 @@ function Countries(props) {
 
 
     return (
-        <option value ={props.item.name}>
-            {props.item.name}
+        <option value ={props.item.country}>
+            {props.item.country}
         </option>
     )
 

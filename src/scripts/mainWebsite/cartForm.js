@@ -13,21 +13,20 @@ class CartForm extends React.Component {
 
 
     componentDidMount() {
-        fetch("https://restcountries.eu/rest/v2/all", {
+        fetch("https://countriesnow.space/api/v0.1/countries/", {
 
         })
         .then(res =>res.json())
         .then(data => {
             this.setState({
-                countries: data
+                countries: data.data
             })
         })
     }
 
 
     render() {
-        console.log(this.state.countries)
-        let mapped = this.state.countries.map(item => <Countries item={item} key ={item.altSpellings} />)
+        let mapped = this.state.countries.map((item,index) => <Countries item={item} key ={index} />)
 
 
         return (

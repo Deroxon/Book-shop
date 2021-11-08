@@ -80,9 +80,6 @@ class App extends React.Component {
       let grabCart = document.querySelector(".cart");
       grabCart.scrollTop = grabCart.scrollHeight;
     }
-    if (prevState.wygenerowania == <Product />) {
-      console.log("this was A PRODUCT")
-    }
   }
 
   communicates(com, boolean) {
@@ -144,7 +141,7 @@ class App extends React.Component {
     
 
     this.pokazStrone(id)
-    console.log('pokaz strone funckja przekazanie', id)
+    //console.log('pokaz strone funckja przekazanie', id)
     
   }
 
@@ -220,8 +217,8 @@ class App extends React.Component {
         }
         
     })
-    console.log('wózek')
-    console.log( this.state.cart)
+    //console.log('wózek')
+    //console.log( this.state.cart)
     
    
     
@@ -241,7 +238,7 @@ podliczKoszyk() {
             cos += (this.state.cart[i].price * this.state.cart[i].inCartQuanity)
             
         }
-       console.log("cosiek " + cos)
+       //console.log("cosiek " + cos)
         return {
             sum: cos
         }
@@ -260,7 +257,7 @@ deleteFromCart(id) {
     if(checkCart >=0) {
         
         this.state.cart.splice(checkCart, 1)
-        console.log(this.state.cart)
+        //console.log(this.state.cart)
     }
     // liczymy operacje usunięcia z wózka oraz renderujemy 
     this.setState(prevState => {
@@ -270,7 +267,7 @@ deleteFromCart(id) {
         operacje: prevState.operacje +1
       }
     })
-   console.log(checkCart);
+   //console.log(checkCart);
 }
 
   // funkcja Dodawania do koszyka
@@ -284,13 +281,13 @@ deleteFromCart(id) {
       let zmienna = "";
       let finalObject = "";
       if(id < 70) {
-        console.log('to id jest mniejsze')
+        //console.log('to id jest mniejsze')
         zmienna = this.state.books
         // pamiętamy że aby indexować od dobrej dajemy -1 
       } else {
         zmienna = this.state.games
         // pamiętamy że aby indexować od dobrej dajemy -100 ponieważ w grach obiekty mają id od 101
-        console.log("OBIEKKKT")
+        //console.log("OBIEKKKT")
       }
         zmienna = zmienna.map( e => {
           if(e.id === id) {
@@ -302,7 +299,7 @@ deleteFromCart(id) {
         })
 
 
-        console.log(finalObject)
+        //console.log(finalObject)
 
       // wyszukiwanie czy dany index o parametrze id znajduję się w tabelce cart
       let pos = this.state.cart.map( e => {return e.id;} ).indexOf(id)
@@ -362,7 +359,7 @@ deleteFromCart(id) {
       let zmienna = "";
       let finalObject = "";
       if(id < 70) {
-        console.log('to id jest mniejsze')
+        //console.log('to id jest mniejsze')
         zmienna = this.state.books
       } else {
         zmienna = this.state.games
@@ -385,7 +382,7 @@ deleteFromCart(id) {
 
     
 
-    console.log("IDDDDDDDDDDDDDDDDDDDDDDD", id)
+    //console.log("IDDDDDDDDDDDDDDDDDDDDDDD", id)
   }
  
 
@@ -402,7 +399,7 @@ render() {
   // przypisanie funkcji scrollowania w momencie załadowania dokumentu
 
   let grabMainApp = document.querySelector(".mainApp")
-  console.log(grabMainApp)
+  //console.log(grabMainApp)
 // checking to repair website
 
   $(document).ready( () => {
@@ -435,8 +432,8 @@ render() {
   
   */
 
-  console.log("heeeeeey")
-  console.log(this.state.cart)
+  //console.log("heeeeeey")
+  //console.log(this.state.cart)
 
   let grabCart = document.querySelector('.cart');
   let grabZaslona = document.querySelector('.zaslonaCart');

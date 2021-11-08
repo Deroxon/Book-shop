@@ -8,7 +8,7 @@ const transportList = [
        
     },
     {
-        link: "https://wp.globkurier.pl/wp-content/uploads/2018/11/fedex.png",
+        link: "https://zakatekpamiatek.com.pl/wp-content/uploads/cache/2018/06/fedex-logo/3709263021.png",
         name: "Fedex", 
         type: "Courier delivery - Fedex", 
         onlineP: '10.99', 
